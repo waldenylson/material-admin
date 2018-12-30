@@ -2,20 +2,27 @@
 
 namespace MaterialAdmin\app\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+
 class AdminController extends Controller
 {
-    protected $data = []; // the information we send to the view
+    /**
+     * The information we send to the view.
+     */
+    protected $data = [];
+
     /**
      * Create a new controller instance.
      */
     public function __construct()
     {
-        $this->middleware('web');
+        $this->middleware('auth');
+        $this->data['user'] = Auth::user();
     }
     /**
      * Show the admin dashboard.
      *
-     * @return \Illuminate\Http\Response
+     * @return view
      */
     public function index()
     {

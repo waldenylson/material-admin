@@ -16,5 +16,6 @@
         </div>
       @include('material::parts.sidebarStyle')
       @include('material::parts.scripts')
+      @include('material::alerts.toastr')
    </body>
 </html>

@@ -19,5 +19,8 @@ Route::group(
     ],
     function () {
         Route::get('/', 'AdminController@index')->name('material.dashboard');
+        Route::get('/user/logout', 'UserController@logout')->name('material.logout');
+        Route::get('/user/profile', 'ProfileController@index')->name('material.profile');
+        Route::put('/user/profile/{id}', 'ProfileController@update')->name('material.profile.edit');
     }
 );
