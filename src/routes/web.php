@@ -15,7 +15,7 @@ Route::group(
     [
         'namespace'  => 'MaterialAdmin\app\Http\Controllers',
         'middleware' => 'web',
-        'prefix'     => 'admin',
+        'prefix'     => config('material.route_prefix'),
     ],
     function () {
         Route::get('/', 'AdminController@index')->name('material.dashboard');
